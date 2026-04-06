@@ -6,3 +6,12 @@ struct Alamatdetail
     string desa;
     string kota;
 };
+struct mahasiswa
+{
+    string nama;
+    alamatDetail alamat;
+    int umur;
+};
+
+int main()
+{
