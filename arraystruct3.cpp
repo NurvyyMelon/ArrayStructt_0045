@@ -1,35 +1,41 @@
 #include <iostream>
+#include <string> // Tambahkan library string untuk keamanan
 using namespace std;
 
-struct Alamatdetail
-{
+struct AlamatDetail { // Menggunakan PascalCase agar lebih rapi
     string desa;
     string kota;
 };
-struct mahasiswa
-{
+
+struct mahasiswa {
     string nama;
-    alamatDetail alamat;
+    AlamatDetail alamat; // Nama struct harus sama persis dengan definisinya
     int umur;
 };
 
-int main()
-{
-    // deklarasi variable struct
+int main() {
+    // Deklarasi variabel struct
     mahasiswa mhs;
-      // mengisi data
+
+    // Mengisi data
     cout << "Isikan data nama : ";
-    cin >> mhs.nama;
+    // Menggunakan getline agar bisa membaca nama dengan spasi
+    getline(cin >> ws, mhs.nama); 
+
     cout << "Isikan data kota : ";
     cin >> mhs.alamat.kota;
+
     cout << "Isikan data desa : ";
     cin >> mhs.alamat.desa;
+
     cout << "Isikan data usia : ";
     cin >> mhs.umur;
-    
-     cout << "Data Mahasiswa" << endl;
+
+    cout << "\n--- Data Mahasiswa ---" << endl;
     cout << "Nama : " << mhs.nama << endl;
     cout << "Kota : " << mhs.alamat.kota << endl;
     cout << "Desa : " << mhs.alamat.desa << endl;
-    cout << "Usia : " << mhs.umur << endl;
+    cout << "Usia : " << mhs.umur << " tahun" << endl;
+
+    return 0;
 }
